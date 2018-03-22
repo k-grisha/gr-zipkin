@@ -1,15 +1,14 @@
-spring.boot.admin.routes.endpoints: env,metrics,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,loggers,auditevents,hystrix.stream,activiti
 spring:
   application:
     name: gr-zipkin
 server:
-  port: ${ADMIN_PORT:0}
+  port: ${ZIPKIN_PORT:0}
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://${DISCOVERY_HOST:localhost}:${DISCOVERY_PORT:8761}/eureka
+      defaultZone: http://proga.pw:8761/eureka
   instance:
     preferIpAddress: true
 management:
   security:
-    enabled: ${actuator.protected:true}
+    enabled: false
